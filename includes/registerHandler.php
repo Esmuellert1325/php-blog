@@ -1,5 +1,5 @@
 <?php
-    require_once '../MVC/service.php';
+require_once '../MVC/service.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email =  filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     else {
-        exit();
+        header('Location: ../index.php?message=register-error');
     }
 }
 else {

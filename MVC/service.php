@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 require_once '../includes/DatabaseConfig.php';
 
 
@@ -29,15 +32,14 @@ class Service {
 
     public function registerUser($email, $username, $password): bool {
         $emailQuery = "SELECT * FROM users WHERE email = '$email'";
-        $usernameQuery = "SELECT * FROM users WHERE name = '$username'";
+        $usernameQuery = "SELECT * FROM users WHERE username = '$username'";
 
         if ($this->conn) {
             $emailResult = mysqli_query($this->conn, $emailQuery); 
             $usernameResult = mysqli_query($this->conn, $usernameQuery);
             
             if ($emailResult != NULL && $emailResult->num_rows > 0 || $usernameResult != NULL && $usernameResult->num_rows > 0) {
-                echo "E-mail or username is taken!";
-                header('Location: ../index.php?message=username-email-taken');
+                header('Location: ../index.php?message=credentials-taken');
             }
             else {
                 $secure_pass = password_hash($password, PASSWORD_DEFAULT);
@@ -46,6 +48,25 @@ class Service {
                 return true;
             }
         }
+        return false;
+    }
+
+    public function loginUser($email, $password) {
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        if (isset($this->conn)) {
+            $result = mysqli_query($this->conn, $sql); 
+            $row = mysqli_fetch_assoc($result);
+
+            if (mysqli_num_rows($result) != 0) {
+                $dbUsername = $row["email"]; 
+                $dbPassword = $row["password"]; 
+
+                if ($dbUsername === $email && password_verify($password, $dbPassword)) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
