@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect to index.php if on "/"
+RewriteRule ^$ index.php [L]
+RewriteRule ^login$ index.php [L]
+RewriteRule ^register$ index.php [L]
+
+# Redirect to userView.php if on "/home"
+RewriteRule ^home$ views/Home.php [L]
