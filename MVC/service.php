@@ -58,15 +58,32 @@ class Service {
             $row = mysqli_fetch_assoc($result);
 
             if (mysqli_num_rows($result) != 0) {
-                $dbUsername = $row["email"]; 
+                $dbEmail = $row["email"]; 
                 $dbPassword = $row["password"]; 
 
-                if ($dbUsername === $email && password_verify($password, $dbPassword)) {
+                if ($dbEmail === $email && password_verify($password, $dbPassword)) {
                     return true;
                 }
             }
         }
 
         return false;
+    }
+
+    /**
+     * Gets a specific column from the Users table
+     * 
+     * @param $email - The email address of the user 
+     * @param $field - The name of the column 
+     */
+    public function getFieldByEmail($email, $field): string {
+        $sql = "SELECT $field FROM users WHERE email = '$email'";
+
+        if (isset($this->conn) && $field !== "password") {
+            $result = mysqli_query($this->conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+
+            return $row[$field];
+        }
     }
 }

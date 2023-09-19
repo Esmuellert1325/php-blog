@@ -9,7 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $service = new Service();
         if ($service->connectDB()) {
             if ($service->loginUser($email, $password)) {
-                header('Location: ../views/Home.php');
+                $username = $service->getFieldByEmail($email, "username");
+
+                session_start();
+                $_SESSION["username"] = $username;
+                $_SESSION["email"] = $email;
+                
+                header('Location: /php-blog/home');
+                exit();
             }
             else {
                 header('Location: ../index.php?message=incorrect-login');

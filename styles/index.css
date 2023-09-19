@@ -5,6 +5,10 @@
     font-family: "Roboto", sans-serif;
 }
 
+form#login-form {
+    height: 330px;
+}
+
 form {
     width: 30%;
     height: 435px;

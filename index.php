@@ -17,7 +17,7 @@
         if (isset($_GET["message"])) $message = $_GET["message"];
 
         if ($location === "login" || $location === "" || (isset($message) && $message === "register-successful") || (isset($message) && $message === "incorrect-login")) {
-            echo "<form action='includes/loginHandler.php' method='post'>
+            echo "<form id='login-form' action='includes/loginHandler.php' method='post'>
                 <h1>Login to your account</h1>
                 <input type='text' id='email' name='email'>
                 <label for='email'>E-mail address</label>
