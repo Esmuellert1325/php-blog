@@ -12,13 +12,21 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/Home.css">
+    <script src="./js/base_service.js" type="text/javascript"></script>
     <title>Home</title>
 </head>
 
 <body>
+    
     <div class="container">
 
         <nav class="navigation">
+
+            <div class="logout">
+                <button class="logout-btn" id="logout-btn">
+                    <p class="logout-text">Logout</p>
+                </button>
+            </div>
             
             <div class="user-image">
                 <img src="./assets/profile-pictures/default.jpg" alt="Profile picture" class="circular-pfp">
@@ -31,6 +39,7 @@ session_start();
 
             <ul class="menu-list">
                 <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
                 <li><a href="#">Saved posts</a></li>
                 <li><a href="#">Settings</a></li>
             </ul>
@@ -78,10 +87,11 @@ session_start();
         </main>
 
         <aside class="recommendations">
-
+            
         </aside>
 
     </div>
+
 </body>
 
 </html>

@@ -9,6 +9,8 @@
 <body>
     
     <?php
+        session_start();
+
         $url = $_SERVER["REQUEST_URI"]; 
         $parts = explode('/', $url);
         $location = end($parts);
