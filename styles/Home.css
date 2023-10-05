@@ -1,28 +1,30 @@
+/* Reset default margin and padding for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: sans-serif;
 }
 
-body {
-    background-color: #fff;
-}
-
+/* Apply basic styles to the container */
 .container {
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    height: 100vh; /* Make the container take up the entire viewport height */
 }
 
-.navigation {
-    height: 600px;
-    border-radius: 14px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+/* Style the navigation (left column) */
+.nav {
+    flex: 30%; /* 30% of the container's width */
+    background-color: #fff; /* Example background color */
+    position: fixed; /* Fix the navigation to the viewport */
+    height: 85%; /* Make it full height */
     width: 20%;
-    margin: 60px;
-    position: fixed;
+    margin-top: 50px;
+    margin-left: 2rem;
+    overflow-y: auto; /* Add a scrollbar if content exceeds viewport height */
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }
 
 .logout {
@@ -59,129 +61,151 @@ body {
     display: block;
 }
 
+/* Style the container to control its dimensions */
 .user-image {
-    width: 70%;
-    height: 35%;
-    margin: auto;
-    margin-top: 30px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
-    border-radius: 60%;
+    width: 150px; /* Set the width as needed */
+    height: 150px; /* Set the height as needed */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    overflow: hidden; /* Hide any overflowing content */
+    border-radius: 50%; /* Create a circular shape */
 }
 
+/* Style the circular profile picture to fill the container */
 .circular-pfp {
-    width: 100%;
-    height: 100%;
-    border-radius: 60%;
+    width: 100%; /* Make the image 100% width of the container */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    display: block; /* Remove extra spacing caused by inline elements */
 }
 
 .user-name {
-    margin: auto;
-    text-align: center;
-    width: 100%;
-    padding: 25px;
     font-size: 22px;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .menu-list {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+.menu-list li {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.menu-list a {
+    display: block;
     width: 100%;
-    padding: 20px;
-    padding-top: 0;
+    height: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #27cf4b;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    transition: 0.4s;
+}
+
+.menu-list a:hover {
+    cursor: pointer;
+    background-color: #1f9939;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* MAIN STYLING */
+
+/* Style the main content (middle container) */
+.main {
+    flex: 40%; /* 40% of the container's width */
+    margin-top: 30px;
+    margin-left: 25%; /* Adjust for the width of the navigation */
+    margin-right: 25%; /* Adjust for the width of the aside */
+    margin-bottom: 30px; /* Adjust for the width of the aside */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #ffffff; /* Example background color */
+    overflow-y: auto; /* Add a scrollbar if content exceeds viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.menu-list li {
-    list-style: none;
-    width: 50%;
-    height: 30px;
-    text-align: center;
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-.menu-list a {
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-    background-color: #27cf4b;
-    border-radius: 15px;
-    transition: 0.4s;
-}
-
-.menu-list a:hover {
-    background-color: #1f9939;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-}
-
-/* MIDDLE SECTION */
-
-.post-container {
-    width: 45%;
-    margin: auto;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-.save-btn {
-    width: 15%;
-    padding: 5px;
-    background-color: #00b9ff;
-    border: none;
-    border-radius: 20px;
-}
-
-.post-container h1 {
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
-    color: #00ff68;
-}
-
 .post {
     width: 100%;
-    margin: auto;
     margin-top: 15px;
-    margin-bottom: 30px;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    transition: 0.4s;
+    margin-bottom: 15px;
+    padding: 2em;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
 }
 
 .post:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.9);
     width: 95%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-}
-
-.post h2 {
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
-    color: #00ff68;
 }
 
 .post-row {
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 25px;
 }
 
-/* RIGHT SIDE SECTION */
+.save-btn {
+    border: none;
+    border-radius: 1em;
+    width: 6em;
+    padding: 5px;
+    color: #fff;
+    text-shadow: 1px 0px 3px black;
+    background-color: #00b9ff;
+}
+
+.save-btn:hover {
+    cursor: pointer;
+    background-color: #0089BD;
+}
+
+/* Style the aside (right column) */
 .recommendations {
-    width: 240px;
-    height: 600px;
-    right: 80px;
-    top: 60px;
-    position: fixed;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    flex: 30%; /* 30% of the container's width */
+    background-color: #fff; /* Example background color */
+    position: fixed; /* Fix the aside to the viewport */
+    height: 85%; /* Make it full height */
+    width: 20%;
+    margin-top: 50px;
+    margin-right: 2rem;
+    right: 0; /* Position it on the right side */
+    top: 0; /* Align it to the top */
+    overflow-y: auto; /* Add a scrollbar if content exceeds viewport height */
     border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Media query for smaller screens (e.g., mobile view) */
+@media screen and (max-width: 911px) {
+    /* Hide the navigation and aside, and expand the main container */
+    .nav, .recommendations {
+        display: none;
+    }
+
+    .main {
+        flex: 100%; /* Take up the full width */
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Remove right margin */
+    }
 }

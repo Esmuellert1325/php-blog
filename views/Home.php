@@ -20,7 +20,7 @@ session_start();
     
     <div class="container">
 
-        <nav class="navigation">
+        <nav class="nav">
 
             <div class="logout">
                 <button class="logout-btn" id="logout-btn">
@@ -46,44 +46,105 @@ session_start();
 
         </nav>
 
-        <main class="post-container">
+        <main class="main">
             <h1>The newest posts</h1>
             <div class="post">
-                <button class="save-btn">SAVE</button>
                 <h2>Title</h2>
                 <span class="post-row">
                     <p>By: Author</p>
-                    <p>Date</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
                 </span>
             </div>
             <div class="post">
                 <h2>Title</h2>
                 <span class="post-row">
-                    <p>Author</p>
-                    <p>Date</p>
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
                 </span>
             </div>
             <div class="post">
                 <h2>Title</h2>
                 <span class="post-row">
-                    <p>Author</p>
-                    <p>Date</p>
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
                 </span>
             </div>
             <div class="post">
                 <h2>Title</h2>
                 <span class="post-row">
-                    <p>Author</p>
-                    <p>Date</p>
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
                 </span>
             </div>
             <div class="post">
                 <h2>Title</h2>
                 <span class="post-row">
-                    <p>Author</p>
-                    <p>Date</p>
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
                 </span>
             </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+            <div class="post">
+                <h2>Title</h2>
+                <span class="post-row">
+                    <p>By: Author</p>
+                    <p>2023.10.03.</p>
+                    <button class="save-btn">SAVE</button>
+                </span>
+            </div>
+
         </main>
 
         <aside class="recommendations">
