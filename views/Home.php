@@ -148,7 +148,14 @@ session_start();
         </main>
 
         <aside class="recommendations">
-            
+            <div class="recommended-user">
+                <div class="user-image">
+                    <img src="./assets/profile-pictures/default.jpg" alt="Profile picture" class="circular-pfp">
+                    <!-- <a href="https://www.freepik.com/free-photo/user-profile-icon-front-side_41949685.htm#query=default%20profile%20picture&position=44&from_view=search&track=ais">Image by qalebstudio</a> on Freepik -->
+                </div>
+                <h3>Name</h3>
+                <span class="follow-button">+</span>
+            </div>
         </aside>
 
     </div>
